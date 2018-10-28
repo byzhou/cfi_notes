@@ -35,7 +35,33 @@ mangling prefixes are 1)\_ZTV, 2)\_ZTS 3)\_ZTI.
 In order to display the vtable information statically, you can use objdump:
 ```bash
 (cross-compiler-triple)objdump -d -j .rodata your-binary-name
+
+# Here are the rodata information.
+
+Disassembly of section .rodata:
+
+0000000000400a90 <_IO_stdin_used>:
+  400a90:	01 00 02 00 6d 65 6f 77 77 77 0a 00 70 75 66 66     ....meowww..puff
+  400aa0:	66 0a 00 49 20 61 6d 20 73 6d 61 72 74 0a 00 49     f..I am smart..I
+  400ab0:	20 61 6d 20 63 75 74 65 0a 00 00 00 00 00 00 00      am cute........
+
+0000000000400ac0 <_ZTV3cat>:
+	...
+  400ac8:	e0 0a 40 00 00 00 00 00 90 06 40 00 00 00 00 00     ..@.......@.....
+
+0000000000400ad8 <_ZTS3cat>:
+  400ad8:	33 63 61 74 00 00 00 00                             3cat....
+
+0000000000400ae0 <_ZTI3cat>:
+  400ae0:	a8 1d 60 00 00 00 00 00 d8 0a 40 00 00 00 00 00     ..`.......@.....
+  400af0:	c0 0b 40 00 00 00 00 00                             ..@.....
 ```
+Thus the vtable of cat class is:
+| address | value | meaning|
+|----|-----|----|
+|0x400ac8|0x400ae0|The address of cat::sound(). If the vptr points here, it can call the parent implementation.|
+|0x400ad0|0x400690|typeinfo, rtti metadat information, contains the hierarchy of inheritance.|
+
 
 ## Q & A
 
