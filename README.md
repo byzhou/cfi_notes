@@ -279,7 +279,14 @@ _0x10d50_). Here are the explanations on the vtable information:
 
 In the [paper](https://cseweb.ucsd.edu/~lerner/papers/ivtbl-ndss16.pdf), the
 authors mentioned that their interleaved layout of vtables, can be enforced
-using intel [MPX](https://intel-mpx.github.io/code/submission.pdf)
+using intel [MPX](https://intel-mpx.github.io/code/submission.pdf). In the
+brief idea, the intel MPX introduces new ISAs to check the memory boundaries
+against certain pre-defined values.
+[MPX](https://intel-mpx.github.io/code/submission.pdf) explains that the
+current implementation of compiler does not work well with the MPX, in the
+sense that the overhead of memory checks was 4x. In addition to the slowdowns,
+8-13% of the programs did not run correctly without substantial code changes,
+and 18% required non-intrusive manual changes.
 
 ## Q & A
 
