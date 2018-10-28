@@ -67,7 +67,7 @@ Thus the vtable of cat class is:
 | address | value | meaning|
 |----|-----|----|
 |0x400ac8|0x400ae0|The address of cat::sound(). If the vptr points here, it can call the parent implementation.|
-|0x400ad0|0x400690|typeinfo, rtti metadat information, contains the hierarchy of inheritance.|
+|0x400ad0|0x400690|typeinfo, rtti metadat information, contains the address of the parent's rtti.|
 
 ## Vtables and .rodata (Without CFI, riscv64 as an example)
 Here is an example of how the vtables and .rodata laid out in the binary.
