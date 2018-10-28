@@ -28,6 +28,10 @@ However, they mangling naming follows a consistent rule.  The metadata consists
 of 3 parts: 1) vtable, 2) typeinfo name, and 3) typeinfo. The corresponding
 mangling prefixes are 1)\_ZTV, 2)\_ZTS 3)\_ZTI.
 
+| Class Name | Vtable | Typeinfo Name | Typeinfo |
+|----------|------|-----|-----|
+|cat | \_ZTV3cat| \_ZTS3cat |\_ZTI3cat|
+
 ## Q & A
 
 - How to index the member functions after interleaving the data?
