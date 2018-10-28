@@ -57,6 +57,7 @@ Disassembly of section .rodata:
   400af0:	c0 0b 40 00 00 00 00 00                             ..@.....
 ```
 Thus the vtable of cat class is:
+
 | address | value | meaning|
 |----|-----|----|
 |0x400ac8|0x400ae0|The address of cat::sound(). If the vptr points here, it can call the parent implementation.|
