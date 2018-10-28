@@ -17,7 +17,7 @@ how the memory are laid out in the .rodata section.
 - [Paper](https://cseweb.ucsd.edu/~lerner/papers/ivtbl-ndss16.pdf) explains how
 the .rodata are organized: pre-order hierarchy and interleaving data.
 
-## Vtables and .rodata
+## Vtables and .rodata (Without CFI)
 
 The metadata information of all the class definitions are stored inside the
 *.rodata*.  CPP uses name mangling for differentiating functions, members of
