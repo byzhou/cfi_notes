@@ -277,6 +277,10 @@ _0x10d50_). Here are the explanations on the vtable information:
 | 0x10dd8 | 0x10d30 | the address of rtti cat | 
 | 0x10dd8 | 0x106e0 | the address of cat::sound () | 
 
+In the [paper](https://cseweb.ucsd.edu/~lerner/papers/ivtbl-ndss16.pdf), the
+authors mentioned that their interleaved layout of vtables, can be enforced
+using intel [MPX] (https://intel-mpx.github.io/code/submission.pdf)
+
 ## Q & A
 
 - How to index the member functions after interleaving the data?
