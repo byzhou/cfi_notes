@@ -279,7 +279,7 @@ _0x10d50_). Here are the explanations on the vtable information:
 
 In the [paper](https://cseweb.ucsd.edu/~lerner/papers/ivtbl-ndss16.pdf), the
 authors mentioned that their interleaved layout of vtables, can be enforced
-using intel [MPX] (https://intel-mpx.github.io/code/submission.pdf)
+using intel [MPX](https://intel-mpx.github.io/code/submission.pdf)
 
 ## Q & A
 
