@@ -64,7 +64,7 @@ Disassembly of section .rodata:
 ```
 Thus the vtable of cat class is (Runtime typeinfo, RTTI) :
 
-| address | value | meaning|
+| Address | Value | meaning|
 |----|-----|----|
 |0x400ac8|0x400ae0|The address of cat::sound(). If the vptr points here, it can call the parent implementation.|
 |0x400ad0|0x400690|typeinfo, RTTI metadat information, contains the address of the parent's RTTI.|
@@ -264,7 +264,18 @@ the .rodata is organized to lay out typeinfo + typeinfo name upfront (before
 _0x10d50_), and then lay out the vtable information interleaved together (after
 _0x10d50_). Here are the explanations on the vtable information:
 
-
+| Address | Value | Meaning |
+| -----   | ----- | ------ |
+| 0x10d58 | 0x10ca0 | rtti doge|  
+| 0x10d60 | 0x10788 | doge::sound() | 
+| 0x10d78 | 0x10d00 | rtti retriever|  
+| 0x10d78 | 0x10750 | retriever::sound() | 
+| 0x10d98 | 0x10cc0 | rtti dog |  
+| 0x10d98 | 0x10718 | dog::sound() | 
+| 0x10db8 | 0x10ce0 | rtti animal |   
+| 0x10db8 | 0x10bf0 | animal::sound() | 
+| 0x10dd8 | 0x10d30 | rtti cat | 
+| 0x10dd8 | 0x106e0 | cat::sound () | 
 
 ## Q & A
 
