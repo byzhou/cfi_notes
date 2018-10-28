@@ -266,16 +266,16 @@ _0x10d50_). Here are the explanations on the vtable information:
 
 | Address | Value | Meaning |
 | -----   | ----- | ------ |
-| 0x10d58 | 0x10ca0 | rtti doge|  
-| 0x10d60 | 0x10788 | doge::sound() | 
-| 0x10d78 | 0x10d00 | rtti retriever|  
-| 0x10d78 | 0x10750 | retriever::sound() | 
-| 0x10d98 | 0x10cc0 | rtti dog |  
-| 0x10d98 | 0x10718 | dog::sound() | 
-| 0x10db8 | 0x10ce0 | rtti animal |   
-| 0x10db8 | 0x10bf0 | animal::sound() | 
-| 0x10dd8 | 0x10d30 | rtti cat | 
-| 0x10dd8 | 0x106e0 | cat::sound () | 
+| 0x10d58 | 0x10ca0 | the address of rtti doge|  
+| 0x10d60 | 0x10788 | the address of doge::sound() | 
+| 0x10d78 | 0x10d00 | the address of rtti retriever|  
+| 0x10d78 | 0x10750 | the address of retriever::sound() | 
+| 0x10d98 | 0x10cc0 | the address of rtti dog |  
+| 0x10d98 | 0x10718 | the address of dog::sound() | 
+| 0x10db8 | 0x10ce0 | the address of rtti animal |   
+| 0x10db8 | 0x10bf0 | the address of animal::sound() | 
+| 0x10dd8 | 0x10d30 | the address of rtti cat | 
+| 0x10dd8 | 0x106e0 | the address of cat::sound () | 
 
 ## Q & A
 
