@@ -17,7 +17,7 @@ how the memory are laid out in the .rodata section.
 - [Paper](https://cseweb.ucsd.edu/~lerner/papers/ivtbl-ndss16.pdf) explains how
 the .rodata are organized: pre-order hierarchy and interleaving data.
 
-## Vtables and .rodata (Without CFI)
+## Vtables and .rodata (Without CFI, x86 as an example)
 
 The metadata information of all the class definitions are stored inside the
 *.rodata*.  CPP uses name mangling for differentiating functions, members of
@@ -68,6 +68,55 @@ Thus the vtable of cat class is:
 |----|-----|----|
 |0x400ac8|0x400ae0|The address of cat::sound(). If the vptr points here, it can call the parent implementation.|
 |0x400ad0|0x400690|typeinfo, rtti metadat information, contains the hierarchy of inheritance.|
+
+## Vtables and .rodata (Without CFI, riscv64 as an example)
+Here is an example of how the vtables and .rodata laid out in the binary.
+```cpp
+#include <stdio.h>
+
+
+class animal {
+    public:
+    virtual void sound(){};
+};
+
+
+class cat:public animal{
+    public:
+    virtual void sound();
+};
+
+class dog:public animal{
+    public:
+    virtual void sound();
+};
+
+class retriever:public dog{
+    public:
+    virtual void sound();
+};
+class doge:public dog{
+    public:
+    virtual void sound();
+};
+
+void cat::sound(){
+    printf ("meowww\n");
+}
+void dog::sound(){
+    printf ("pufff\n");
+}
+void retriever::sound(){
+    printf ("I am smart\n");
+}
+void doge::sound(){
+    printf ("I am cute\n");
+}
+
+```
+
+
+## Vtables and .rodata (With CFI, riscv64 as an example)
 
 
 ## Q & A
