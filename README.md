@@ -186,6 +186,86 @@ Disassembly of section .data.rel.ro:
 ## Vtables and .rodata (With CFI, riscv64 as an example)
 [The same example in the last section](https://github.com/byzhou/cfi_notes#vtables-and-rodata-without-cfi-riscv64-as-an-example)
 
+```bash
+# riscv64-unknown-linux-gnu-objdump -d -j .rodata helloworld 
+
+helloworld:     file format elf64-littleriscv
+
+
+Disassembly of section .rodata:
+
+0000000000010c70 <_ZTI4doge-0x30>:
+   10c70:	656d                	lui	a0,0x1b
+   10c72:	7777776f          	jal	a4,88be8 <__global_pointer$+0x753a8>
+   10c76:	000a                	c.slli	zero,0x2
+   10c78:	7570                	ld	a2,232(a0)
+   10c7a:	6666                	ld	a2,88(sp)
+   10c7c:	0a66                	slli	s4,s4,0x19
+   10c7e:	4900                	lw	s0,16(a0)
+   10c80:	6120                	ld	s0,64(a0)
+   10c82:	206d                	0x206d
+   10c84:	72616d73          	csrrsi	s10,0x726,2
+   10c88:	0a74                	addi	a3,sp,284
+   10c8a:	4900                	lw	s0,16(a0)
+   10c8c:	6120                	ld	s0,64(a0)
+   10c8e:	206d                	0x206d
+   10c90:	65747563          	bleu	s7,s0,112da <__FRAME_END__+0x476>
+   10c94:	000a                	c.slli	zero,0x2
+	...
+
+0000000000010ca0 <_ZTI4doge>:
+   10ca0:	2db8 0001 0000 0000 0cb8 0001 0000 0000     .-..............
+   10cb0:	0cc0 0001 0000 0000                         ........
+
+0000000000010cb8 <_ZTS4doge>:
+   10cb8:	6434 676f 0065 0000                         4doge...
+
+0000000000010cc0 <_ZTI3dog>:
+   10cc0:	2db8 0001 0000 0000 0cd8 0001 0000 0000     .-..............
+   10cd0:	0ce0 0001 0000 0000                         ........
+
+0000000000010cd8 <_ZTS3dog>:
+   10cd8:	6433 676f 0000 0000                         3dog....
+
+0000000000010ce0 <_ZTI6animal>:
+   10ce0:	2d60 0001 0000 0000 0cf0 0001 0000 0000     `-..............
+
+0000000000010cf0 <_ZTS6animal>:
+   10cf0:	6136 696e 616d 006c 0000 0000 0000 0000     6animal.........
+
+0000000000010d00 <_ZTI9retriever>:
+   10d00:	2db8 0001 0000 0000 0d18 0001 0000 0000     .-..............
+   10d10:	0cc0 0001 0000 0000                         ........
+
+0000000000010d18 <_ZTS9retriever>:
+   10d18:	7239 7465 6972 7665 7265 0000 0000 0000     9retriever......
+	...
+
+0000000000010d30 <_ZTI3cat>:
+   10d30:	2db8 0001 0000 0000 0d48 0001 0000 0000     .-......H.......
+   10d40:	0ce0 0001 0000 0000                         ........
+
+0000000000010d48 <_ZTS3cat>:
+   10d48:	6333 7461 0000 0000 0000 0000 0000 0000     3cat............
+   10d58:	0ca0 0001 0000 0000 0788 0001 0000 0000     ................
+	...
+   10d78:	0d00 0001 0000 0000 0750 0001 0000 0000     ........P.......
+	...
+   10d98:	0cc0 0001 0000 0000 0718 0001 0000 0000     ................
+	...
+   10db8:	0ce0 0001 0000 0000 0bf0 0001 0000 0000     ................
+	...
+   10dd8:	0d30 0001 0000 0000 06e0 0001 0000 0000     0...............
+```
+
+Compared to the one without CFI, the .rodata has reformatted all the
+information.  Instead of laying out the ZTV, ZTI, and ZTS metadata information,
+the .rodata is organized to lay out typeinfo + typeinfo name upfront (before
+_0x10d50_), and then lay out the vtable information interleaved together (after
+_0x10d50_). Here are the explanations on the vtable information:
+
+
+
 ## Q & A
 
 - How to index the member functions after interleaving the data?
