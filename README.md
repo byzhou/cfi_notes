@@ -184,7 +184,10 @@ Disassembly of section .data.rel.ro:
 ```
 
 ## Vtables and .rodata (With CFI, riscv64 as an example)
-[The same example in the last section](https://github.com/byzhou/cfi_notes#vtables-and-rodata-without-cfi-riscv64-as-an-example)
+The same
+[example](https://github.com/byzhou/cfi_notes#vtables-and-rodata-without-cfi-riscv64-as-an-example)
+as the last section, with *-flto -fvisibility=hidden -fsanitize=cfi* enabled
+during clang compilation.
 
 ```bash
 # riscv64-unknown-linux-gnu-objdump -d -j .rodata helloworld 
