@@ -167,7 +167,7 @@ Thus, we can infer from the snippet of information in dissambled binary as follo
 | 0x10cf8 | 0x10ce8 | address of ASCII for "3cat" | 
 | 0x10d00 | 0x10dd0 | RTTI information of the parent class animal | 
 
-To get the cxxabi class type info function, you can use the following command ( not relevant in this context, but good to known):
+To get the cxxabi class type info function, you can use the following command ( not relevant in this context, but good to know):
 
 ```bash
 $ riscv64-unknown-linux-gnu-objdump -d -j .data.rel.ro helloworld
@@ -184,7 +184,7 @@ Disassembly of section .data.rel.ro:
 ```
 
 ## Vtables and .rodata (With CFI, riscv64 as an example)
-
+[The same example in this section](#Vtables and .rodata (Without CFI, riscv64 as an example))
 
 ## Q & A
 
