@@ -124,3 +124,7 @@ anmial --- dog  --- retriever
 - How to index the member functions after interleaving the data?
 - How to enforce CFI with these data?
 - How to differentiate vcalls vs other indirect calls?
+
+## Problems Remained
+
+- How to differentiate between virtual calls and other indirect calls?
