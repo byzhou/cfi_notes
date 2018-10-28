@@ -32,6 +32,11 @@ mangling prefixes are 1)\_ZTV, 2)\_ZTS 3)\_ZTI.
 |----------|------|-----|-----|
 |cat | \_ZTV3cat| \_ZTS3cat |\_ZTI3cat|
 
+In order to display the vtable information statically, you can use objdump:
+```bash
+(cross-compiler-triple)objdump -d -j .rodata your-binary-name
+```
+
 ## Q & A
 
 - How to index the member functions after interleaving the data?
