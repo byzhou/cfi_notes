@@ -73,24 +73,18 @@ Thus the vtable of cat class is:
 Here is an example of how the vtables and .rodata laid out in the binary.
 ```cpp
 #include <stdio.h>
-
-
 class animal {
     public:
     virtual void sound(){};
 };
-
-
 class cat:public animal{
     public:
     virtual void sound();
 };
-
 class dog:public animal{
     public:
     virtual void sound();
 };
-
 class retriever:public dog{
     public:
     virtual void sound();
@@ -112,7 +106,6 @@ void retriever::sound(){
 void doge::sound(){
     printf ("I am cute\n");
 }
-
 ```
 The inheritance tree is as follows:
 ```
