@@ -114,7 +114,14 @@ void doge::sound(){
 }
 
 ```
-
+The inheritance tree is as follows:
+```
+anmial --- dog  --- retriever
+       |        |
+       |        --- doge
+       |
+       --- cat
+```
 
 ## Vtables and .rodata (With CFI, riscv64 as an example)
 
