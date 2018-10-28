@@ -184,7 +184,7 @@ Disassembly of section .data.rel.ro:
 ```
 
 ## Vtables and .rodata (With CFI, riscv64 as an example)
-[The same example in this section](#Vtables-and-.rodata-(Without-CFI,-riscv64-as-an-example))
+[The same example in this section](#vtables-and-rodata-without-cfi-riscv64-as-an-example)
 
 ## Q & A
 
