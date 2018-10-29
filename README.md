@@ -297,6 +297,7 @@ and 18% required non-intrusive manual changes.
 - How to enforce CFI with these data?
 - How to differentiate vcalls vs other indirect calls?
 - How to handle devirtualization in single member function classes?
+- How to handle singleton?
 
 ## Problems Remained
 
