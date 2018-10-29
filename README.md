@@ -296,6 +296,7 @@ and 18% required non-intrusive manual changes.
 - How to index the member functions after interleaving the data?
 - How to enforce CFI with these data?
 - How to differentiate vcalls vs other indirect calls?
+- How to handle devirtualization in single member function classes?
 
 ## Problems Remained
 
