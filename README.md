@@ -291,6 +291,38 @@ sense that the overhead of memory checks was 4x. In addition to the slowdowns,
 8-13% of the programs did not run correctly without substantial code changes,
 and 18% required non-intrusive manual changes.
 
+## Software Enforcement
+
+Software Enforcement uses instructions to check if the target address is aligned and
+within certain range.
+
+```
+assert (a <= $vptr <= b) and ($vptr & 0x1f == 0)
+```
+In one real case, the above code is optimized into ``srli'', ``slli'' and
+several other instructions.  Warning: the following asm is not from the
+previous
+[example](https://github.com/byzhou/cfi_notes#vtables-and-rodata-without-cfi-riscv64-as-an-example).
+This piece of code is used to show how CFI is enfoced.
+
+```bash
+   1067c:       00053583                ld      a1,0(a0)
+   10680:       00055637                lui     a2,0x55
+   10684:       fc060613                addi    a2,a2,-64 # 54fc0 <_ZTS3cat+0x18>
+   10688:       40c58633                sub     a2,a1,a2
+   1068c:       00565693                srli    a3,a2,0x5
+   10690:       03b61613                slli    a2,a2,0x3b
+   10694:       00c6e633                or      a2,a3,a2
+   10698:       00563613                sltiu   a2,a2,5
+   1069c:       00061a63                bnez    a2,106b0 <main+0x80>
+   106a0:       0040006f                j       106a4 <main+0x74>
+   106a4:       00010537                lui     a0,0x10
+   106a8:       20050513                addi    a0,a0,512 # 10200 <abort>
+   106ac:       000500e7                jalr    a0
+   106b0:       0005b583                ld      a1,0(a1)
+   106b4:       000580e7                jalr    a1
+```
+
 ## Q & A
 
 - How to index the member functions after interleaving the data?
