@@ -13,6 +13,6 @@ branch sites and locate the corresponding metadata information location.
 - Use the results of the analysis tool to configure PHMon.
 - Evaluate the performance overhead of Hardware assisted CFI enforcements on
 SPEC, servers or browsers.
-- Lauch Counterfeit Object-Oriented Programming (COOP) attack, forward-edge
+- Lauch Counterfeit Object-Oriented Programming (COOP) attack, a forward-edge
 attack on vcalls, and detect the COOP in CFI enforced application.
 
