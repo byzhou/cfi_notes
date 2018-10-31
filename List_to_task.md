@@ -2,7 +2,7 @@
 
 - Perform literature reviews on the CFI overhead in the software
 implementations.
-- Understand how CFI are enforced in non-vcalls indirect branches.
+- Understand how CFI is enforced in non-vcalls indirect branches.
 - Measure the performance overhead of software implementation of CFI in one of
 the following applications.
     * [Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/linux_build_instructions.md)
