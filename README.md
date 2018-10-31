@@ -323,7 +323,32 @@ This piece of code is used to show how CFI is enfoced.
    106b0:       0005b583                ld      a1,0(a1)
    106b4:       000580e7                jalr    a1
 ```
+## Build Chromium
 
+To build chromium in linux, use the following commands. 
+
+```bash
+# download all the tools to build chromium
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+cd depot_tools
+export PATH=$PATH:`pwd`
+cd ..
+mkdir -p chromium-build
+cd chromium-build
+# download all the necessary dependencies
+fetch --nohooks chromium
+cd src
+# download additional dependencies
+gclient runhooks
+# configure ninja
+gn gen out/Default
+# you can use gn to configure ninja build dependencies, cross-compiler triple
+# are specified for ''gn''. You can use ''gn help'' to specify compiler, flags
+# used for building with ninja
+autoninja -C out/Default chrome
+# location of chrome
+out/Default/chrome
+```
 ## Q & A
 
 - How to index the member functions after interleaving the data?
