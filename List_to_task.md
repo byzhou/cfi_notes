@@ -10,7 +10,7 @@ the following applications.
     * [Apache HTTP Server](http://httpd.apache.org/docs/2.4/install.html)
 - Implement the analysis tool that can statically determine all the indirect
 branch sites and locate the corresponding metadata information location.
-- Use the results of the analysis tool results to configure PHMon.
+- Use the results of the analysis tool to configure PHMon.
 - Evaluate the performance overhead of Hardware assisted CFI enforcements on
 SPEC, servers or browsers.
 - Lauch Counterfeit Object-Oriented Programming (COOP) the application, and
