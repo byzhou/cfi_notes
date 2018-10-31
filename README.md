@@ -155,7 +155,7 @@ Disassembly of section .rodata:
    10cf0:	2db8 0001 0000 0000 0ce8 0001 0000 0000     .-..............
    10d00:	0dd0 0001 0000 0000                         ........
 ```
-Thus, we can infer from the snippet of information in dissambled binary as following:
+Thus, we can infer from the snippet dissambled binary:
 
 | Address | Value | Meaning|
 | -----   | ----- | ------ |
