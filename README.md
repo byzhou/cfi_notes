@@ -299,7 +299,7 @@ within certain range.
 ```
 assert (a <= $vptr <= b) and ($vptr & 0x1f == 0)
 ```
-In one real case, the above code is optimized into ``srli'', ``slli'' and
+In one real case, the above code is optimized into ''srli'', ''slli'' and
 several other instructions.  Warning: the following asm is not from the
 previous
 [example](https://github.com/byzhou/cfi_notes#vtables-and-rodata-without-cfi-riscv64-as-an-example).
