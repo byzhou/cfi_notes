@@ -306,6 +306,7 @@ previous
 This piece of code is used to show how CFI is enfoced.
 
 ```bash
+   10678:       fd043503                ld      a0,-48(s0)
    1067c:       00053583                ld      a1,0(a0)
    10680:       00055637                lui     a2,0x55
    10684:       fc060613                addi    a2,a2,-64 # 54fc0 <_ZTS3cat+0x18>
