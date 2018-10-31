@@ -349,6 +349,16 @@ autoninja -C out/Default chrome
 # location of chrome
 out/Default/chrome
 ```
+To use chrome to dump website to stdout:
+
+```bash
+google-chrome -headless -no-sandbox -incognito  --app=https://google.com
+```
+-headless means that do not display GUI
+
+-no-sandbox will be a security issue 
+
+-dump-dom means that to print document.body.innerHTML to stdout
 ## Q & A
 
 - How to index the member functions after interleaving the data?
