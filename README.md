@@ -375,6 +375,20 @@ installed properly, you need to satisfy the prerequisites. The compilation
 informations are configured using environmental variables, similar to any other
 linux programs.
 
+## RISCV static
+
+Configuration error in Apache:
+```
+configure: error: Size of "void *" is less than size of "long"
+# change the configure file
+# if test "$ap_cv_void_ptr_lt_long" = "yes"; then
+#     as_fn_error $? "Size of \"void *\" is less than size of \"long\"" "$LINENO" 5
+# 
+# change to 
+#
+# if test "$ap_cv_void_ptr_lt_long" != "yes"; then
+#     as_fn_error $? "Size of \"void *\" is less than size of \"long\"" "$LINENO" 5
+```
 
 ## Q & A
 
