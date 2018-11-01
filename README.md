@@ -369,7 +369,11 @@ Prerequisites of apache build.
 ```bash
 sudo apt install libaprutil1 libaprutil1-dev libapr1 libapr1-dev
 ```
-
+[Apache HTTP Server](http://httpd.apache.org/docs/2.4/install.html) explains
+how apache server is downloaded and installed. To make sure that it is
+installed properly, you need to satisfy the prerequisites. The compilation
+informations are configured using environmental variables, similar to any other
+linux programs.
 
 
 ## Q & A
