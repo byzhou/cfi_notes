@@ -325,6 +325,7 @@ This piece of code is used to show how CFI is enfoced.
 ```
 ## Build Chromium
 
+### x86 default
 To build chromium in linux, use the following commands. 
 
 ```bash
@@ -359,6 +360,18 @@ google-chrome -headless -no-sandbox -incognito  --app=https://google.com
 -no-sandbox will be a security issue 
 
 -dump-dom means that to print document.body.innerHTML to stdout
+
+## Build Apache
+
+### x86 default
+
+Prerequisites of apache build.
+```bash
+sudo apt install libaprutil1 libaprutil1-dev libapr1 libapr1-dev
+```
+
+
+
 ## Q & A
 
 - How to index the member functions after interleaving the data?
