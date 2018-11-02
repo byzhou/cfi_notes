@@ -388,6 +388,9 @@ configure: error: Size of "void *" is less than size of "long"
 #
 # if test "$ap_cv_void_ptr_lt_long" != "yes"; then
 #     as_fn_error $? "Size of \"void *\" is less than size of \"long\"" "$LINENO" 5
+
+# cannot remove libtoolT: No such file or directory
+# chang $RM "$cfgfile" to $RM -f "$cfgfile"
 ```
 
 ## Q & A
