@@ -18,7 +18,7 @@ how the memory are laid out in the .rodata section.
 the .rodata are organized: pre-order hierarchy and interleaving data.
 
 - [Backend Pass Tutorial](http://www.kharghoshal.xyz/blog/writing-machinefunctionpass)
-explains how to write a backend pass. super useful, stupid llvm.org only have tutorials
+explains how to write a backend pass. super useful, stupid llvm.org only has tutorials
 for writing one entire backend. 
 
 ## Vtables and .rodata (Without CFI, x86 as an example)
