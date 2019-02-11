@@ -17,6 +17,10 @@ how the memory are laid out in the .rodata section.
 - [Paper](https://cseweb.ucsd.edu/~lerner/papers/ivtbl-ndss16.pdf) explains how
 the .rodata are organized: pre-order hierarchy and interleaving data.
 
+- [Backend Pass Tutorial] (http://www.kharghoshal.xyz/blog/writing-machinefunctionpass)
+explains how to write a backend pass. super useful, stupid llvm.org only have tutorials
+for writing one entire backend. 
+
 ## Vtables and .rodata (Without CFI, x86 as an example)
 
 The metadata information of all the class definitions are stored inside the
